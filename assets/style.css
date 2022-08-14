@@ -2,7 +2,7 @@
 	--container-size: 60%;
 	--section-size: 2rem;
 	--content-size: 2.2rem;
-	--logo-size: 60px;
+	--logo-size: 70px;
 	--font-size: 1.8em;
 }
 
@@ -13,12 +13,13 @@
 }
 
 * {
-	transition: all cubic-bezier(0.215, 0.610, 0.355, 1) 0.12s;
+	transition: all cubic-bezier(0.215, 0.610, 0.355, 1) 0s;
 }
 
 body {
 	width: 100%;
 	height: 100%;
+	position: relative;
 	font-family: 'Poppins', sans-serif;
 	font-size: var(--font-size);
 	background-color: #020c1b;
@@ -27,6 +28,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
+	position: relative;
 	color: #ccd6f6;
 }
 
@@ -105,24 +107,54 @@ nav a:hover {
 	color: #4d4d4d;
 	padding: .1rem .5em;
 	margin-left: .3rem;
-	background-color: #ccd6f6;
+	background-color: transparent;
+	border: 1px solid #ccd6f6;
+	color: #ccd6f6;
 	border-radius: .5rem;
 	top: 0;
+}
+
+.badge.blue {
+	background-color: transparent;
+	color: #64ffda;
+	border: 1px solid #64ffda;
 }
 
 .button {
 	font-size: smaller;
 	color: #64ffda;
 	display: inline-block;
-	margin: var(--content-size) 0;
+	margin: var(--content-size) .4rem;
 	padding: .5rem 1.6rem;
 	background-color: transparent;
 	border-radius: .5rem;
 	border: 2px solid #64ffda;
 }
 
-a.button:hover {
+.button:hover {
 	background-color: rgba(100,255,218,0.1);
+}
+
+.feature-item {
+	display: flex;
+	gap: calc(var(--content-size) * 4);
+	align-items: center;
+	margin-bottom: var(--section-size);
+}
+
+.feature-item-image,
+.feature-item-image svg {
+	width: 100%;
+}
+
+.feature-item:nth-child(even) .feature-item-image {
+	order: 1;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 /* CSS for phone screen */
@@ -133,6 +165,18 @@ a.button:hover {
 		--logo-size: 40px;
 		--section-size: .5rem;
 		--content-size: .8rem;
+	}
+	footer,
+	#top-header {
+		text-align: center;
+		flex-direction: column;
+	}
+	.feature-item {
+		flex-direction: column;
+	}
+	.feature-item .feature-item-image {
+		width: 60%;
+		order: 0 !important;
 	}
 }
 
@@ -168,3 +212,9 @@ a.button:hover {
 		--content-size: 2.2rem;
 	}
 }
+
+/* SVG freepic animate */
+svg#freepik_stories-web-search:not(.animated) .animable {opacity: 0;}svg#freepik_stories-web-search.animated #freepik--background-complete--inject-5 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}svg#freepik_stories-web-search.animated #freepik--Floor--inject-5 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) fadeIn;animation-delay: 0s;}svg#freepik_stories-web-search.animated #freepik--Window--inject-5 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideRight;animation-delay: 0s;}svg#freepik_stories-web-search.animated #freepik--Plant--inject-5 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedRight;animation-delay: 0s;}svg#freepik_stories-web-search.animated #freepik--Character--inject-5 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}svg#freepik_stories-web-search.animated #freepik--magnifying-glass--inject-5 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) zoomIn;animation-delay: 0s;}            @keyframes slideUp {                0% {                    opacity: 0;                    transform: translateY(30px);                }                100% {                    opacity: 1;                    transform: inherit;                }            }                    @keyframes fadeIn {                0% {                    opacity: 0;                }                100% {                    opacity: 1;                }            }                    @keyframes slideRight {                0% {                    opacity: 0;                    transform: translateX(30px);                }                100% {                    opacity: 1;                    transform: translateX(0);                }            }                    @keyframes lightSpeedRight {              from {                transform: translate3d(50%, 0, 0) skewX(-20deg);                opacity: 0;              }              60% {                transform: skewX(10deg);                opacity: 1;              }              80% {                transform: skewX(-2deg);              }              to {                opacity: 1;                transform: translate3d(0, 0, 0);              }            }                    @keyframes zoomIn {                0% {                    opacity: 0;                    transform: scale(0.5);                }                100% {                    opacity: 1;                    transform: scale(1);                }            }
+svg#freepik_stories-inbox-cleanup:not(.animated) .animable {opacity: 0;}svg#freepik_stories-inbox-cleanup.animated #freepik--Floor--inject-91 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) zoomOut;animation-delay: 0s;}svg#freepik_stories-inbox-cleanup.animated #freepik--Shadows--inject-91 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) zoomOut;animation-delay: 0s;}svg#freepik_stories-inbox-cleanup.animated #freepik--Device--inject-91 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedRight;animation-delay: 0s;}svg#freepik_stories-inbox-cleanup.animated #freepik--Plants--inject-91 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedLeft;animation-delay: 0s;}svg#freepik_stories-inbox-cleanup.animated #freepik--Mailbox--inject-91 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideLeft;animation-delay: 0s;}svg#freepik_stories-inbox-cleanup.animated #freepik--trash-can--inject-91 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedRight;animation-delay: 0s;}svg#freepik_stories-inbox-cleanup.animated #freepik--Character--inject-91 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideDown;animation-delay: 0s;}            @keyframes zoomOut {                0% {                    opacity: 0;                    transform: scale(1.5);                }                100% {                    opacity: 1;                    transform: scale(1);                }            }                    @keyframes lightSpeedRight {              from {                transform: translate3d(50%, 0, 0) skewX(-20deg);                opacity: 0;              }              60% {                transform: skewX(10deg);                opacity: 1;              }              80% {                transform: skewX(-2deg);              }              to {                opacity: 1;                transform: translate3d(0, 0, 0);              }            }                    @keyframes lightSpeedLeft {              from {                transform: translate3d(-50%, 0, 0) skewX(20deg);                opacity: 0;              }              60% {                transform: skewX(-10deg);                opacity: 1;              }              80% {                transform: skewX(2deg);              }              to {                opacity: 1;                transform: translate3d(0, 0, 0);              }            }                    @keyframes slideLeft {                0% {                    opacity: 0;                    transform: translateX(-30px);                }                100% {                    opacity: 1;                    transform: translateX(0);                }            }                    @keyframes slideDown {                0% {                    opacity: 0;                    transform: translateY(-30px);                }                100% {                    opacity: 1;                    transform: translateY(0);                }            }
+svg#freepik_stories-button-style:not(.animated) .animable {opacity: 0;}svg#freepik_stories-button-style.animated #freepik--Floor--inject-63 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) fadeIn;animation-delay: 0s;}svg#freepik_stories-button-style.animated #freepik--Shadows--inject-63 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideRight;animation-delay: 0s;}svg#freepik_stories-button-style.animated #freepik--Windows--inject-63 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) zoomIn;animation-delay: 0s;}svg#freepik_stories-button-style.animated #freepik--Plant--inject-63 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) zoomIn;animation-delay: 0s;}svg#freepik_stories-button-style.animated #freepik--Device--inject-63 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedLeft;animation-delay: 0s;}svg#freepik_stories-button-style.animated #freepik--Screen--inject-63 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}svg#freepik_stories-button-style.animated #freepik--Colors--inject-63 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedRight;animation-delay: 0s;}svg#freepik_stories-button-style.animated #freepik--Character--inject-63 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedLeft;animation-delay: 0s;}            @keyframes fadeIn {                0% {                    opacity: 0;                }                100% {                    opacity: 1;                }            }                    @keyframes slideRight {                0% {                    opacity: 0;                    transform: translateX(30px);                }                100% {                    opacity: 1;                    transform: translateX(0);                }            }                    @keyframes zoomIn {                0% {                    opacity: 0;                    transform: scale(0.5);                }                100% {                    opacity: 1;                    transform: scale(1);                }            }                    @keyframes lightSpeedLeft {              from {                transform: translate3d(-50%, 0, 0) skewX(20deg);                opacity: 0;              }              60% {                transform: skewX(-10deg);                opacity: 1;              }              80% {                transform: skewX(2deg);              }              to {                opacity: 1;                transform: translate3d(0, 0, 0);              }            }                    @keyframes slideUp {                0% {                    opacity: 0;                    transform: translateY(30px);                }                100% {                    opacity: 1;                    transform: inherit;                }            }                    @keyframes lightSpeedRight {              from {                transform: translate3d(50%, 0, 0) skewX(-20deg);                opacity: 0;              }              60% {                transform: skewX(10deg);                opacity: 1;              }              80% {                transform: skewX(-2deg);              }              to {                opacity: 1;                transform: translate3d(0, 0, 0);}}
+svg#freepik_stories-karaoke:not(.animated) .animable {opacity: 0;}svg#freepik_stories-karaoke.animated #freepik--Floor--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) fadeIn;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--Bricks--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedRight;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--Wall--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedLeft;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--Frame--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideRight;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--Window--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideDown;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--Shadows--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideDown;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--Plant--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedRight;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--Speakers--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) fadeIn;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--Screen--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideLeft;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--Table--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedRight;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--character-2--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedRight;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--character-1--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) lightSpeedRight;animation-delay: 0s;}svg#freepik_stories-karaoke.animated #freepik--musical-notes--inject-16 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideLeft;animation-delay: 0s;}            @keyframes fadeIn {                0% {                    opacity: 0;                }                100% {                    opacity: 1;                }            }                    @keyframes lightSpeedRight {              from {                transform: translate3d(50%, 0, 0) skewX(-20deg);                opacity: 0;              }              60% {                transform: skewX(10deg);                opacity: 1;              }              80% {                transform: skewX(-2deg);              }              to {                opacity: 1;                transform: translate3d(0, 0, 0);              }            }                    @keyframes lightSpeedLeft {              from {                transform: translate3d(-50%, 0, 0) skewX(20deg);                opacity: 0;              }              60% {                transform: skewX(-10deg);                opacity: 1;              }              80% {                transform: skewX(2deg);              }              to {                opacity: 1;                transform: translate3d(0, 0, 0);              }            }                    @keyframes slideRight {                0% {                    opacity: 0;                    transform: translateX(30px);                }                100% {                    opacity: 1;                    transform: translateX(0);                }            }                    @keyframes slideDown {                0% {                    opacity: 0;                    transform: translateY(-30px);                }                100% {                    opacity: 1;                    transform: translateY(0);                }            }                    @keyframes slideLeft {                0% {                    opacity: 0;                    transform: translateX(-30px);                }                100% {                    opacity: 1;                    transform: translateX(0);}}
